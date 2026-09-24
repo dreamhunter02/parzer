@@ -1,0 +1,20 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "parse-eval-harness"
+version = "0.2.0"
+description = "Minimal direct Nemotron Parse 2.0 evaluation harness for PDF structure analysis"
+requires-python = ">=3.10"
+dependencies = [
+  "openai>=1.0",
+  "Pillow>=10.0",
+  "pypdfium2>=4.30",
+]
+
+[project.scripts]
+parse-harness = "parse_harness.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/parse_harness"]
